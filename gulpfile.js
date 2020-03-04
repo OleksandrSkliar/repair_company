@@ -1,13 +1,30 @@
-const gulp = require("gulp");
+const {
+  src,
+  dest,
+  watch
+} = require("gulp");
 const browserSync = require("browser-sync").create();
-const rename = require("gulp-rename");
-const cssmin = require("cssmin");
+const sass = require('gulp-sass');
 
-gulp.task("browser-sync", function() {
+function bs() {
+  serveSass();
   browserSync.init({
     server: {
       baseDir: "./src"
     }
   });
-  gulp.watch("./src/*.html").on("change", browserSync.reload);
-});
+  watch("./src/*.html").on("change", browserSync.reload);
+  watch("./src/sass/**/*.sass", serveSass);
+  watch("./src/js/*.js").on("change", browserSync.reload);
+};
+
+
+// Compile sass into CSS & auto-inject into browsers
+function serveSass() {
+  return src("./src/sass/*.sass")
+    .pipe(sass())
+    .pipe(dest("./src/css"))
+    .pipe(browserSync.stream());
+};
+
+exports.serve = bs;
