@@ -544,8 +544,7 @@ body {
   .hero__scroll-down {
     display: none; }
   .hero__content {
-    max-width: 24.28rem;
-    margin-top: 6.07rem; }
+    max-width: 24.28rem; }
   .hero__text {
     font-size: 1.29rem;
     margin-bottom: 2.28rem; }
