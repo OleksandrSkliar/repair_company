@@ -1,0 +1,73 @@
+@media screen and ( min-width: 1200px )
+  .container
+    width: 87%
+  .nav
+    &__item
+      margin-right: 2rem
+  
+@media screen and ( max-width: 1200px )
+  html
+    font-size: 12px
+  .container
+    width: 85%
+  .nav
+    &__item
+      margin-right: 1rem
+
+@media screen and ( max-width: 992px )
+  .hero
+    &__instagram
+      display: none
+    &__content
+      margin-left: 0
+  .nav
+    display: none
+
+@media ( max-width: 768px ) 
+  .hero
+    &__scroll-down
+      display: none
+
+@media ( min-width: 320px ) and ( max-width: 576px )
+  .hero
+    padding-top: 60px
+  .contacts
+    &__button
+      display: none
+    &__phone
+      margin-right: 0
+      color: $light
+      text-decoration: none
+  .container
+    width: 90%
+  .title
+    font-size: 1.64rem
+  .hero
+    &__scroll-down
+      display: none
+    &__content
+      max-width: 24.28rem
+      margin-top: 6.07rem
+    &__text
+      font-size: 1.29rem
+      margin-bottom: 2.28rem
+    &__button
+      display: block
+      min-width: 28rem
+      margin-bottom: 1.86rem
+
+@media ( min-width: 320px ) and ( max-width: 369px )
+  .hero
+    &__content
+      min-width: 20rem
+    &__button
+      min-width: 100%
+
+@media screen and ( max-height: 520px )
+  .hero
+    &__scroll-down
+      display: none
+
+  @media ( min-width: 370px ) and ( max-width: 576px )
+    .hero
+      padding-top: 60px
