@@ -1,6 +1,8 @@
 @media screen and ( min-width: 1200px )
   .container
     width: 87%
+  .container__extra
+    width: 100%
   .nav
     &__item
       margin-right: 2rem
@@ -13,6 +15,8 @@
   .nav
     &__item
       margin-right: 1rem
+  .section
+    margin-top: 0
 
 @media screen and ( max-width: 992px )
   .hero
@@ -23,10 +27,46 @@
   .nav
     display: none
 
-@media ( max-width: 768px ) 
+@media screen and  ( max-width: 768px ) 
   .hero
     &__scroll-down
       display: none
+  .row
+    flex-direction: column
+    align-items: center
+  .types
+    &__card
+      margin-bottom: 5rem
+    &__section-title
+      margin-bottom: 3.3rem
+  .card
+    &__text
+      margin-left: 0
+      max-width: 22.8rem
+      margin-top: -11.9rem
+      padding: 1.6rem 2.6rem
+    &__pricetag
+      bottom: -1.29rem
+      padding: 0.9rem 2.6rem
+      min-width: 15.83rem
+    &__list
+      margin: 0 0 0 1.2rem
+      line-height: 1.9rem
+      margin-bottom: 2.2rem
+  .section
+    margin-top: 0
+    &--design
+      color: $light
+      background-color: $dark-mobi
+  .section-title__heading
+    font-size: 1.83rem
+  .section-title
+    &__description
+      color: $light
+      max-width: 90%
+      font-size: 1.25rem
+      line-height: 1.83rem
+
 
 @media ( min-width: 320px ) and ( max-width: 576px )
   .hero
@@ -61,6 +101,11 @@
       min-width: 20rem
     &__button
       min-width: 100%
+  .card
+    &__pricetag
+      min-width: 100%
+    &__text
+      max-width: 18rem
 
 @media screen and ( max-height: 520px )
   .hero
