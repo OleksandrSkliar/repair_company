@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(event) {
+/* document.addEventListener("DOMContentLoaded", function(event) {
   const modal = document.querySelector(".modal");
   const modalBtn = document.querySelectorAll("[data-togle=modal");
   const toggleModal = () => {
@@ -21,5 +21,29 @@ document.addEventListener("DOMContentLoaded", function(event) {
     if (event.code == "Escape") {
       hideModal();
     }
+  });
+}); */
+
+$(document).ready(function() {
+  var modal = $(".modal"),
+    modalBtn = $("[data-togle=modal]"),
+    modalClose = $(".modal__close");
+  modalBtn.on("click", function() {
+    modal.toggleClass("modal--visible");
+  });
+  modalClose.on("click", function() {
+    modal.toggleClass("modal--visible");
+  });
+  // scroll-up
+  var $btnTop = $(".scroll-up");
+  $(window).on("scroll", function() {
+    if ($(window).scrollTop() >= 20) {
+      $btnTop.fadeIn();
+    } else {
+      $btnTop.fadeOut();
+    }
+  });
+  $btnTop.on("click", function() {
+    $("html,body").animate({ scrollTop: 0 }, 900);
   });
 });

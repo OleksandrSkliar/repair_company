@@ -404,6 +404,17 @@ template {
     cursor: pointer;
     margin-right: 0.64rem; }
 
+.scroll-up {
+  display: none;
+  position: fixed;
+  bottom: 1.5rem;
+  right: 0;
+  z-index: 200;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent; }
+
 .container {
   max-width: 1256px;
   width: 80%;
