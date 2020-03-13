@@ -415,6 +415,16 @@ template {
   cursor: pointer;
   background: transparent; }
 
+.video {
+  min-height: 100vh;
+  text-align: center;
+  width: 100%;
+  display: table; }
+  .video__wrap {
+    display: table-cell;
+    vertical-align: middle;
+    color: #ffffff; }
+
 .container {
   max-width: 1256px;
   width: 80%;
@@ -506,7 +516,6 @@ img {
 .hero {
   position: relative;
   display: flex;
-  background: #131313 url("../img/hero-bg.jpg") no-repeat center/cover;
   height: 100vh;
   padding-top: 100px;
   color: #ffffff; }
