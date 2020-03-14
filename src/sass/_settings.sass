@@ -14,10 +14,35 @@ img
 
 .section
   padding: 60px 0
+  &--dark
+    background-color: $dark
+    color: $light
   &-title
     text-align: center
     text-transform: uppercase
     font-family: 'Yeseva One', cursive
+    &__text
+      font-size: 1.285rem
+      line-height: 2.07rem
+      text-transform: none
+      max-width: 31.57rem
+      font-family: 'Futura Book', 'Arial', sans-serif
+    &--left
+      text-align: left
+    &__word
+      display: flex
+      align-items: center
+      &::after
+        content: ''
+        width: 92px
+        height: 1px
+        background-color: $primary
+        margin-left: 2rem
+    &__heading
+      font-size: 1.43rem
+      &--primary
+        color: $primary
+        line-height: 138.6%
     &__image
       display: flex
       justify-content: center
@@ -40,5 +65,3 @@ img
       text-align: center
       color: $dark-extra 
       text-transform: none
-.section-title__heading
-  font-size: 1.43rem
