@@ -26,10 +26,22 @@
       margin-left: 0
   .nav
     display: none
+  .swiper
+    &-slide
+      &__text
+        flex-basis: 50%
+      &__heading
+        font-size: 1.16rem
+    &-container
+      margin-bottom: 2rem
+  .section-title__text
+    max-width: 25rem
 
 @media screen and  ( max-width: 768px ) 
   .hero
     &__scroll-down
+      display: none
+    &::after
       display: none
   .row
     flex-direction: column
@@ -53,6 +65,8 @@
       margin: 0 0 0 1.2rem
       line-height: 1.9rem
       margin-bottom: 2.2rem
+  .projects
+    padding-top: 3rem
   .section
     margin-top: 0
     &--design
@@ -66,7 +80,13 @@
       max-width: 90%
       font-size: 1.25rem
       line-height: 1.83rem
-
+    &__word
+      &::after
+        display: none
+    &__text
+      font-size: 1.16rem
+  .col-100
+    width: 100%
 
 @media ( min-width: 320px ) and ( max-width: 576px )
   .hero
