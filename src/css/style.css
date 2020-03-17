@@ -395,6 +395,8 @@ template {
   visibility: hidden; }
   .policy__checkbox:checked + .policy__label::before {
     background: #E3B873 url("../img/check.svg") no-repeat center/0.8rem; }
+  .policy__checkbox:checked + .policy__label--center {
+    justify-content: center; }
 
 .policy__label {
   display: flex;
@@ -462,6 +464,8 @@ img {
 
 .section {
   padding: 60px 0; }
+  .section--design {
+    margin-bottom: 20rem; }
   .section--dark {
     background-color: #131313;
     color: #ffffff; }
@@ -546,6 +550,8 @@ img {
   margin-right: 2.66rem;
   transition: color 0.2s; }
   .nav__item:hover {
+    color: #E3B873; }
+  .nav__item--active {
     color: #E3B873; }
 
 .phone {
@@ -711,7 +717,8 @@ img {
 
 .control__input {
   padding: 0;
-  padding-bottom: 0.571rem; }
+  padding-bottom: 0.571rem;
+  color: #363636; }
   .control__input::-webkit-input-placeholder {
     color: #363636; }
   .control__input::-moz-placeholder {
@@ -900,6 +907,56 @@ img {
   width: auto;
   bottom: 0; }
 
+.footer {
+  background: #131313 url("../img/footer-bg.jpg") no-repeat center/cover;
+  padding-top: 3rem; }
+  .footer__menu {
+    background-color: #181818;
+    padding-top: 4.357rem;
+    padding-bottom: 4.357rem; }
+  .footer__wrap {
+    max-width: 63.07rem;
+    margin: auto;
+    margin-top: -20rem;
+    margin-bottom: 3.714rem;
+    padding: 2.5rem;
+    background-color: #181818;
+    background: #181818 url(../img/bg-lines.png) no-repeat center/cover; }
+  .footer__title {
+    font-family: 'Yeseva One', 'Arial', cursive;
+    font-weight: normal;
+    font-size: 1.428rem;
+    line-height: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 3.083rem; }
+  .footer__form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 37.142rem;
+    margin: auto; }
+  .footer__input {
+    padding: 0;
+    padding-bottom: 5px; }
+  .footer__input-group {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 45%;
+    margin-bottom: 3.428rem; }
+    .footer__input-group--full-width {
+      flex-basis: 100%;
+      margin-bottom: 2.14rem; }
+  .footer__policy {
+    flex-basis: 100%;
+    margin: auto;
+    margin-bottom: 3.571rem; }
+  .footer__button {
+    margin: auto;
+    padding: 1.3857rem 4.3857rem; }
+
 @media screen and (min-width: 1200px) {
   .container {
     width: 87%; }
@@ -967,7 +1024,8 @@ img {
     margin-top: 0; }
     .section--design {
       color: #ffffff;
-      background-color: #181818; }
+      background-color: #131313;
+      margin-bottom: 0; }
   .section-title__heading {
     font-size: 1.83rem; }
   .section-title__description {
@@ -995,7 +1053,8 @@ img {
       margin-bottom: 0.58rem; }
     .control__input {
       border-bottom: 1px solid #ffffff;
-      margin-bottom: 5.25rem; }
+      margin-bottom: 5.25rem;
+      color: #ffffff; }
       .control__input--down {
         margin-bottom: 0; }
       .control__input::-webkit-input-placeholder {
@@ -1023,7 +1082,50 @@ img {
       flex-direction: column; }
     .control__button {
       order: 2;
-      margin-bottom: -6.7rem; } }
+      margin-bottom: -6.7rem; }
+  .footer {
+    padding-top: 0;
+    background: #131313; }
+    .footer__title {
+      font-size: 1.666rem;
+      margin-bottom: 4.183rem; }
+    .footer__wrap {
+      margin-top: 0;
+      padding: 0;
+      background: none; }
+    .footer__form {
+      flex-direction: column;
+      max-width: 100%; }
+    .footer__input {
+      border-bottom: 1px solid #ffffff; }
+    .footer__button {
+      width: 100%;
+      font-size: 1.25rem; }
+    .footer__policy {
+      margin-left: 0;
+      margin-bottom: 5.671rem; }
+    .footer__input-group {
+      margin-bottom: 4.928rem; }
+      .footer__input-group--full-width {
+        margin-bottom: 0.5rem; }
+    .footer__menu {
+      display: none; }
+  .form__label {
+    font-size: 1.25rem;
+    line-height: 1.666rem;
+    margin-bottom: 0.583rem; }
+  .form__input::-webkit-input-placeholder {
+    font-size: 1.5rem; }
+  .form__input::-moz-placeholder {
+    font-size: 1.5rem; }
+  .form__input:-ms-input-placeholder {
+    font-size: 1.5rem; }
+  .form__input::-ms-input-placeholder {
+    font-size: 1.5rem; }
+  .form__input::placeholder {
+    font-size: 1.5rem; }
+  .policy__label {
+    font-size: 1.333rem; } }
 
 @media screen and (max-height: 520px) {
   .hero__scroll-down {
