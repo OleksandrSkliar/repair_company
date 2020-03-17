@@ -711,6 +711,19 @@ img {
 .control__input {
   padding: 0;
   padding-bottom: 0.571rem; }
+  .control__input::-webkit-input-placeholder {
+    color: #363636; }
+  .control__input::-moz-placeholder {
+    color: #363636; }
+  .control__input:-ms-input-placeholder {
+    color: #363636; }
+  .control__input::-ms-input-placeholder {
+    color: #363636; }
+  .control__input::placeholder {
+    color: #363636; }
+
+.control__label {
+  color: rgba(54, 54, 54, 0.5); }
 
 .control__input-group {
   display: flex;
