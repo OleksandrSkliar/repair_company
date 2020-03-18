@@ -432,6 +432,12 @@ template {
     vertical-align: middle;
     color: #ffffff; }
 
+.invalid {
+  color: tomato; }
+
+input.invalid {
+  border-bottom: 1px solid tomato; }
+
 .container {
   max-width: 1256px;
   width: 80%;
@@ -848,10 +854,12 @@ img {
   .modal__form {
     display: flex;
     flex-direction: column; }
-  .modal__input {
+  .modal__input-group {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 3.428rem; }
-    .modal__input:last-of-type {
-      margin-bottom: 1.14rem; }
+  .modal__input:last-of-type {
+    margin-bottom: 1.14rem; }
   .modal__policy {
     margin-bottom: 2.78rem; }
   .modal__button {
@@ -1041,6 +1049,10 @@ img {
     width: 100%; }
   .control {
     background-color: #131313; }
+    .control__input-group {
+      margin-bottom: 5.25rem; }
+      .control__input-group--phone {
+        margin-bottom: 0; }
     .control__text {
       color: #ffffff;
       font-size: 1.16rem;
@@ -1053,7 +1065,6 @@ img {
       margin-bottom: 0.58rem; }
     .control__input {
       border-bottom: 1px solid #ffffff;
-      margin-bottom: 5.25rem;
       color: #ffffff; }
       .control__input--down {
         margin-bottom: 0; }
