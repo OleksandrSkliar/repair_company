@@ -985,6 +985,27 @@ img {
   .footer__button {
     margin: auto;
     padding: 1.3857rem 4.3857rem; }
+  .footer__contacts-title {
+    font-family: 'Yeseva One', 'Arial', cursive;
+    max-width: 38rem;
+    margin: auto;
+    margin-bottom: 1.857rem;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.428rem;
+    line-height: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: #E3B873; }
+  .footer__social {
+    text-align: center;
+    margin-bottom: 3.07rem; }
+    .footer__social-email {
+      margin-right: 1.071rem; }
+  .footer__map {
+    max-width: 66.07rem;
+    margin: auto;
+    margin-bottom: 4.642rem; }
 
 @media screen and (min-width: 1200px) {
   .container {
@@ -1142,6 +1163,15 @@ img {
         margin-bottom: 0.5rem; }
     .footer__menu {
       display: none; }
+    .footer__contacts-title {
+      font-size: 1.5rem;
+      max-width: 27rem; }
+    .footer__wraper-map {
+      display: flex;
+      flex-direction: column; }
+    .footer__map {
+      order: -1;
+      margin-bottom: 3.5rem; }
   .form__label {
     font-size: 1.25rem;
     line-height: 1.666rem;
