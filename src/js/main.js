@@ -74,6 +74,7 @@ $(document).ready(function () {
 
   //Валидация формы
   $('.modal__form').validate({
+    errorElement: "div",
     errorClass: "invalid",
     rules: {
     // строчное правило
@@ -110,7 +111,8 @@ $(document).ready(function () {
   });
 
   $('.control__form').validate({
-    errorClass: "invalid",
+    errorElement: "div",
+    errorClass: "control__invalid",
     rules: {
     // строчное правило
     userName: {
@@ -121,9 +123,8 @@ $(document).ready(function () {
     userPhone: {
       required: true,
       minlength: 15
-    },
+    }
   },
-  errorElement: "div",
   // Сообщения 
   messages: {
     userName: {
@@ -139,7 +140,8 @@ $(document).ready(function () {
   });
 
   $('.footer__form').validate({
-    errorClass: "invalid",
+    errorElement: "div",
+    errorClass: "footer__invalid",
     rules: {
     // строчное правило
     userName: {

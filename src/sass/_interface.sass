@@ -88,8 +88,26 @@
     vertical-align: middle
     color: $light
 
-.invalid
-    color: tomato
+div.invalid
+  color: tomato
+  position: absolute
+  bottom: -5px
 input
   &.invalid
+    border-bottom: 1px solid tomato
+
+div.control__invalid
+  color: tomato
+  position: absolute
+  bottom: -1.3rem
+input
+  &.control__invalid
+    border-bottom: 1px solid tomato
+
+div.footer__invalid
+  color: tomato
+  position: absolute
+  bottom: -1.4rem
+input
+  &.footer__invalid
     border-bottom: 1px solid tomato

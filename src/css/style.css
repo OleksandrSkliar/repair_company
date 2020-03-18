@@ -432,10 +432,28 @@ template {
     vertical-align: middle;
     color: #ffffff; }
 
-.invalid {
-  color: tomato; }
+div.invalid {
+  color: tomato;
+  position: absolute;
+  bottom: -5px; }
 
 input.invalid {
+  border-bottom: 1px solid tomato; }
+
+div.control__invalid {
+  color: tomato;
+  position: absolute;
+  bottom: -1.3rem; }
+
+input.control__invalid {
+  border-bottom: 1px solid tomato; }
+
+div.footer__invalid {
+  color: tomato;
+  position: absolute;
+  bottom: -1.4rem; }
+
+input.footer__invalid {
   border-bottom: 1px solid tomato; }
 
 .container {
@@ -742,7 +760,8 @@ img {
 .control__input-group {
   display: flex;
   flex-direction: column;
-  flex-basis: 30%; }
+  flex-basis: 30%;
+  position: relative; }
 
 .control__button {
   padding: 1.3857rem 4.3857rem; }
@@ -857,6 +876,7 @@ img {
   .modal__input-group {
     display: flex;
     flex-direction: column;
+    position: relative;
     margin-bottom: 3.428rem; }
   .modal__input:last-of-type {
     margin-bottom: 1.14rem; }
@@ -953,7 +973,8 @@ img {
     display: flex;
     flex-direction: column;
     flex-basis: 45%;
-    margin-bottom: 3.428rem; }
+    margin-bottom: 3.428rem;
+    position: relative; }
     .footer__input-group--full-width {
       flex-basis: 100%;
       margin-bottom: 2.14rem; }
