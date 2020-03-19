@@ -1184,8 +1184,11 @@ img {
       flex-wrap: wrap;
       flex-direction: column; }
     .footer__map {
-      order: -1;
-      margin: 0; }
+      margin-bottom: 0; }
+      .footer__map-wrap {
+        order: -1;
+        margin: 0;
+        height: 300px; }
   .form__label {
     font-size: 1.25rem;
     line-height: 1.666rem;
