@@ -175,7 +175,7 @@ $(document).ready(function () {
   });
 
   // Маска для номера телефона
-  $('[type=tel]').mask('+7 (000) 000-00-00', {placeholder: "+7 (___) __-__-__"});
+  $('[type=tel]').mask('+7 (000) 000-00-00', {placeholder: "Ваш номер телефона:"});
 
   // Создание Yandex Map API
     ymaps.ready(init);
