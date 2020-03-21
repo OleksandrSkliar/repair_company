@@ -17,14 +17,13 @@
   },
   "homepage": "https://github.com/Aleksandrskl/repair_company#readme",
   "devDependencies": {
-    "cssmin": "^0.4.3",
-    "csso": "^4.0.2",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.0.2"
   },
   "dependencies": {
-    "browser-sync": "^2.26.7"
+    "browser-sync": "^2.26.7",
+    "gulp-cssmin": "^0.2.0"
   }
 }
