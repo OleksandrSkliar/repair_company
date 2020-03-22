@@ -26,13 +26,18 @@
 
 $(document).ready(function () {
   var modal = $(".modal"),
+  modalAnswer = $('.modal-answer'),
   modalBtn = $("[data-togle=modal]"),
-  modalClose = $(".modal__close");
+  modalClose = $(".modal__close"),
+  closeBtnAnswer = $('.modal-answer__close');
   modalBtn.on("click", function () {
     modal.toggleClass("modal--visible");
   });
   modalClose.on("click", function () {
     modal.toggleClass("modal--visible");
+  });
+  closeBtnAnswer.on('click', function () {
+    modalAnswer.toggleClass('modal-answer--visible');
   });
   // scroll-up
   var $btnTop = $(".scroll-up");
@@ -73,106 +78,66 @@ $(document).ready(function () {
   new WOW().init();
 
   //Валидация формы
-  $('.modal__form').validate({
-    errorElement: "div",
+  function validateForm(form){
+  $(form).validate({
     errorClass: "invalid",
-    rules: {
-    // строчное правило
-    userName: {
-      required: true,
-      minlength: 2,
-      maxlength: 15
-    },
-    userPhone: {
-      required: true,
-      minlength: 15
-    },
-    // правило-обьект
-    userEmail: {
-      required: true,
-      email: true
-    }
-  }, // Сообщения 
-  messages: {
-    userName: {
-      required: "Заполните поле Имя",
-      minlength: "Слишком короткое Имя",
-      maxlength: "Имя не больше 15 букв"
-    },
-    userPhone: {
-      required: "Заполните поле Телефон",
-      minlength: "Введите корректный Телефон"
-    },
-    userEmail: {
-      required: "Заполните поле Email",
-      email: "Введите корректный Email"
-    }
-  }
-  });
-
-  $('.control__form').validate({
     errorElement: "div",
-    errorClass: "control__invalid",
     rules: {
-    // строчное правило
-    userName: {
-      required: true,
-      minlength: 2,
-      maxlength: 15
+      // simple rule, converted to {required:true}
+      userName: {
+        required: true,
+        minlength: 2,
+        maxlength: 15
+      },
+      userPhone: {
+        required: true,
+        minlength: 17
+      },
+      userQuestion: "required",
+      // compound rule
+      userEmail: {
+        required: true,
+        email: true
+      }
     },
-    userPhone: {
-      required: true,
-      minlength: 15
+    messages: {
+      userName: {
+        required: "Заполните поле Имя",
+        minlength: "Слишком короткое имя",
+        maxlength: "Имя не должно превышать 15 символов"
+      },
+      userPhone: {
+        required: "Заполните поле Телефон",
+        minlength: "Некорректно введен номер"
+      },
+      userQuestion: "Заполните поле Вопрос",
+      userEmail: {
+        required: "Заполните поле Email",
+        email: "Введите Ваш email в формате name@domain.com"
+      }
+    },
+    submitHandler: function (form) {
+      $.ajax({
+        type: "POST",
+        url: "send.php",
+        data: $(form).serialize(),
+        success: function(response){
+          //alert('Форма отправлена, мы свяжимся с вами в течение 15 минут');
+          $(form)[0].reset();
+          $(form).find('input').val("");
+          modalAnswer.toggleClass('modal-answer--visible');
+          modal.removeClass('modal--visible');
+        },
+          error: function(response) {
+            console.error('Ошибка запроса' + response);
+          }
+      });
     }
-  },
-  // Сообщения 
-  messages: {
-    userName: {
-      required: "Заполните поле Имя",
-      minlength: "Слишком короткое Имя",
-      maxlength: "Имя не больше 15 букв"
-    },
-    userPhone: {
-      required: "Заполните поле Телефон",
-      minlength: "Введите корректный Телефон"
-    },
-  }
   });
-
-  $('.footer__form').validate({
-    errorElement: "div",
-    errorClass: "footer__invalid",
-    rules: {
-    // строчное правило
-    userName: {
-      required: true,
-      minlength: 2,
-      maxlength: 15
-    },
-    userPhone: {
-      required: true,
-      minlength: 15
-    },
-    // правило-обьект
-    userQuestion: {
-      required: true
-    }
-  }, // Сообщения 
-  messages: {
-    userName: {
-      required: "Заполните поле Имя",
-      minlength: "Имя не короче двух букв",
-      maxlength: "Имя не больше 15 букв"
-    },
-    userPhone: {
-      required: "Заполните поле Телефон",
-      minlength: "Введите корректный Телефон"
-    },
-    userQuestion: {
-      required: "Заполните поле Вопрос",
-    }
-  }
-  });
+}
+validateForm('.modal__form');
+validateForm('.control__form');
+validateForm('.footer__form');
 
   // Маска для номера телефона
   $('[type=tel]').mask('+7 (000) 000-00-00', {placeholder: "Ваш номер телефона:"});

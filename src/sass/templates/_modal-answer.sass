@@ -1,4 +1,4 @@
-.modal
+.modal-answer
   opacity: 0
   visibility: hidden
   display: flex
@@ -13,9 +13,14 @@
   width: 100%
   height: 100%
   background-color: rgba($dark, 0.6)
-  &--visible
-    opacity: 1
-    visibility: visible
+  &__title
+    font-family: 'Yeseva One', 'Arial', cursive
+    font-size: 1.37rem
+    line-height: 1.857rem
+    font-weight: normal
+    text-align: center
+    margin: 0
+    margin-bottom: 2.428rem
   &__dialog
     position: relative
     max-width: 36.36rem
@@ -32,24 +37,24 @@
     border: none
     margin: 12px
     cursor: pointer
-  &__title
+  &__social-text
     font-family: 'Yeseva One', 'Arial', cursive
-    font-size: 1.37rem
-    line-height: 1.857rem
+    font-size: 1.1rem
     font-weight: normal
     text-align: center
-    margin: 0
-    margin-bottom: 2.428rem
-  &__form
+  &__social-link
     display: flex
-    flex-direction: column
-  &__input
-    &-group
-      display: flex
-      flex-direction: column
-      position: relative
-      margin-bottom: 3.428rem
-  &__policy
-    margin-bottom: 2.78rem
-  &__button
-    align-self: flex-end
+    justify-content: center
+    align-items: center
+    font-weight: 700
+    text-transform: uppercase
+    text-decoration: none
+    color: #4a89dc
+    font-size: 1rem
+  &__social-img
+    margin-left: 10px
+  &--visible
+    opacity: 1
+    visibility: visible
+    
+    
