@@ -56,7 +56,7 @@ $(document).ready(function () {
     );
   });
 
-  //initialize swiper when document ready
+  //слайдер в секции завершенные проекты
   var mySwiper = new Swiper(".swiper-container", {
     loop: true,
     pagination: {
@@ -74,6 +74,49 @@ $(document).ready(function () {
 
   next.css("left", prev.width() + 10 + bullets.width() + 10);
   bullets.css("left", prev.width() + 10);
+
+  // слайдер в секции 6 шагов
+  var stepsSwiper = new Swiper('.steps__swiper-container', {
+    // Optional parameters
+    loop: true,
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+    pagination: {
+      el: '.steps__swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    },
+    navigation: {
+      nextEl: '.steps__swiper-button-next',
+      prevEl: '.steps__swiper-button-prev',
+    },
+  });
+
+  var next2 = $('.steps__swiper-button-next');
+  var prev2 = $('.steps__swiper-button-prev');
+  var bullets2 = $('.steps__swiper-pagination');
+
+  next2.css('left', prev2.width() + bullets2.width() + 40)
+  bullets2.css('left', prev2.width() + 20)
+
+  // переключение слайдов по табам из секции 6 
+
+  $('.steps__tabs-item').on('click', function () {
+    $('.steps__tabs-item').removeClass('active');
+    $(this).addClass('active');
+    const e = $(this).data('index');
+    stepsSwiper.slideTo(e);
+  })
+
+  stepsSwiper.on('slideChange', (function () {
+    let e = stepsSwiper.activeIndex - 1;
+    if (e === 6) {e=0};
+    $('.steps__tabs-item').removeClass('active');
+    $('.steps__tabs-item').eq(e).addClass('active');
+  }))
+
 
   new WOW().init();
 
